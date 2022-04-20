@@ -40,12 +40,45 @@ public class MergeSort implements Sort {
     }
 
     @Override
-    public int[] sortAndReturn(int[] arr) {
+    public int[] returnSorted(int[] arr) {
         return mergeSort(arr);
     }
 
     @Override
     public void sortAndPrint(int[] arr) {
-        System.out.println(Arrays.toString(mergeSort(arr)));
+        System.out.println(Arrays.toString(returnSorted(arr)));
     }
+
+
+    @Override
+    public void sortAndPrint(int[] arr, String timeUnit) {
+        switch (timeUnit) {
+            case "ns" -> {
+                long start = System.nanoTime();
+                System.out.println(Arrays.toString(returnSorted(arr)));
+                long end = System.nanoTime();
+                System.out.println("Done in " + (end - start) + " nanoseconds.");
+            }
+            case "ms" -> {
+                long start = System.currentTimeMillis();
+                System.out.println(Arrays.toString(returnSorted(arr)));
+                long end = System.currentTimeMillis();
+                System.out.println("Done in " + (end - start) + " nanoseconds.");
+            }
+            case "s" -> {
+                long start = System.currentTimeMillis();
+                System.out.println(Arrays.toString(returnSorted(arr)));
+                long end = System.currentTimeMillis();
+                System.out.println("Done in " + (end - start) / 1000.0 + " seconds.");
+            }
+            default -> throw new IllegalStateException("timeUnit must be 'ns', 'ms' or 's': " + timeUnit);
+        }
+    }
+
+/*    @Override
+    public long sortAndTime(int[] arr) {
+        long startTime = System.nanoTime();
+        sort(arr);
+        return System.nanoTime() - startTime;
+    }*/
 }
