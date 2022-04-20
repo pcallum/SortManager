@@ -1,6 +1,8 @@
 package com.sparta.sortmanager;
 
-public class BubbleSort {
+import java.util.Arrays;
+
+public class BubbleSort implements Sort {
     public int[] swap(int[] arr, int n1, int n2){
         int temp = arr[n1];
         arr[n1] = arr[n2];
@@ -16,6 +18,7 @@ public class BubbleSort {
         boolean anySwaps = false;
         int maxUnsorted = arr.length - 1;
 
+        //
         while (!anySwaps && maxUnsorted > 0) {
             anySwaps = false;
             for(int i = 0; i < maxUnsorted; i++) {
@@ -27,5 +30,15 @@ public class BubbleSort {
             maxUnsorted--;
         }
         return arr;
+    }
+
+    @Override
+    public int[] sortAndReturn(int[] arr) {
+        return bubbleSort(arr);
+    }
+
+    @Override
+    public void sortAndPrint(int[] arr) {
+        System.out.println(Arrays.toString(bubbleSort(arr)));
     }
 }
