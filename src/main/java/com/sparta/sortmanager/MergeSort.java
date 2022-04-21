@@ -2,7 +2,7 @@ package com.sparta.sortmanager;
 
 import java.util.Arrays;
 
-public class MergeSort implements Sort {
+public class MergeSort implements Sorters {
     public static int[] merge(int[] arr1, int[] arr2) {
         int[] merged = new int[arr1.length + arr2.length];
         int a1index = 0, a2index = 0;
@@ -12,16 +12,11 @@ public class MergeSort implements Sort {
             // if at the end of first array, merge from second array no matter what
             if (a1index == arr1.length) {
                 merged[a1index + a2index] = arr2[a2index++];
-                continue;
-            }
-            // if at the end of first array, merge from first array no matter what
-            if (a2index == arr2.length) {
+            } else if (a2index == arr2.length) {
                 merged[a1index + a2index] = arr1[a1index++];
-                continue;
+            } else {
+                merged[a1index + a2index] = (arr1[a1index] < arr2[a2index]) ? arr1[a1index++] : arr2[a2index++];
             }
-
-            // else
-            merged[a1index + a2index] = (arr1[a1index] < arr2[a2index]) ? arr1[a1index++] : arr2[a2index++];
         }
         return merged;
     }
@@ -63,7 +58,7 @@ public class MergeSort implements Sort {
                 long start = System.currentTimeMillis();
                 System.out.println(Arrays.toString(returnSorted(arr)));
                 long end = System.currentTimeMillis();
-                System.out.println("Done in " + (end - start) + " nanoseconds.");
+                System.out.println("Done in " + (end - start) + " milliseconds.");
             }
             case "s" -> {
                 long start = System.currentTimeMillis();

@@ -18,16 +18,16 @@ You are required to test both the functionality of the program and the performan
 ## Suggested Project Phases
 
 ### Phase 1
-- Write a program which will take an array of ```int```s and sort it using a [bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) algorithm.
-- Add the option to use a [merge sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm instead.
-- Include JUnit tests for this and all subsequent phases (and all subsequent projects for the rest of time).
+- Write a program which will take an array of ```int```s and sort it using a [bubble sort](https://en.wikipedia.org/wiki/Bubble_sort) algorithm. +
+- Add the option to use a [merge sort](https://en.wikipedia.org/wiki/Merge_sort) algorithm instead.+
+- Include JUnit tests for this and all subsequent phases (and all subsequent projects for the rest of time). 
 
 ### Phase 2
-- Update your project to use MVC and start to incorporate some of the design principles discussed earlier in the course (OOP, SOLID, design patterns).
-- Create classes which implements MVC, including ```SortManager``` (controller) and ```DisplayManager``` (view) classes.
-- The code should include a basic factory pattern to determine which sorter to use.
+- Update your project to use MVC and start to incorporate some of the design principles discussed earlier in the course (OOP, SOLID, design patterns). +
+- Create classes which implements MVC, including ```SortManager``` + (controller) and ```DisplayManager``` (view) classes. 
+- The code should include a basic factory pattern to determine which sorter to use. +
 - Make sure packages are created properly and the structure follows the MVC pattern.
- - The code should separate the business logic (```sorters```) from the ```display``` to show MVC in action.
+ - The code should separate the business logic (```sorters```) from the ```display``` to show MVC in action. +
  - ```display``` - Classes that deal with printing to the console window.
  - ```exceptions``` - Any custom exceptions which will be thrown.
  - ```sorters``` - The sort algorithms with Sorter interface for the Factory pattern.

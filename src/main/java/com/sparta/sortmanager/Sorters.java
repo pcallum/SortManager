@@ -1,6 +1,6 @@
 package com.sparta.sortmanager;
 
-public interface Sort {
+public interface Sorters {
     int[] returnSorted(int[] arr);
     void sortAndPrint(int[] arr);
     void sortAndPrint(int[] arr, String timeUnit);

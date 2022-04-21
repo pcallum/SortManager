@@ -2,7 +2,7 @@ package com.sparta.sortmanager;
 
 import java.util.Arrays;
 
-public class BubbleSort implements Sort {
+public class BubbleSort implements Sorters {
     // swaps values at index n1 and n2 in arr
     public int[] swap(int[] arr, int n1, int n2){
         int temp = arr[n1];
@@ -57,7 +57,7 @@ public class BubbleSort implements Sort {
                 long start = System.currentTimeMillis();
                 System.out.println(Arrays.toString(returnSorted(arr)));
                 long end = System.currentTimeMillis();
-                System.out.println("Done in " + (end - start) + " nanoseconds.");
+                System.out.println("Done in " + (end - start) + " milliseconds.");
             }
             case "s" -> {
                 long start = System.currentTimeMillis();

@@ -1,7 +1,7 @@
 package com.sparta.sortmanager;
 
 public class SortFactory {
-    public static Sort getSortType(String arg) {
+    public static Sorters getSortType(String arg) {
          switch (arg){
              case "bubble": return new BubbleSort();
              case "merge": return new MergeSort();
