@@ -1,18 +1,29 @@
 package com.sparta.sortmanager;
 
 public class Display {
-    int arrayLength, lowerBound, Upperbound;
-    String sortType;
-    boolean timed;
+    int arrayLength, lowerBound, upperBound;
+    String sortType, timeUnit;
+    boolean print;
 
-
-    public void displayMenu(int[] arraySettings, String sortType, boolean timed) {
+    public void displayMenu() {
         System.out.println("Current settings");
-        System.out.println("1. Array Settings: ");
-        System.out.println("2. Sort Type: ");
-        System.out.println("3. Time?: ");
+        System.out.println("1. Array Settings: " +
+                "Length = " + getArrayLength() +
+                ", lower bound = " + getLowerBound() +
+                ", upper bound = " + getUpperBound());
+        System.out.println("2. Sort Type: " + sortType);
+        System.out.println("3. Time: " + timeUnit);
+        System.out.println("4. Print result: " + print);
     }
 
+
+    public boolean isPrint() {
+        return print;
+    }
+
+    public void setPrint(boolean print) {
+        this.print = print;
+    }
 
     public int getArrayLength() {
         return arrayLength;
@@ -30,12 +41,12 @@ public class Display {
         this.lowerBound = lowerBound;
     }
 
-    public int getUpperbound() {
-        return Upperbound;
+    public int getUpperBound() {
+        return upperBound;
     }
 
-    public void setUpperbound(int upperbound) {
-        Upperbound = upperbound;
+    public void setUpperBound(int upperBound) {
+        this.upperBound = upperBound;
     }
 
     public String getSortType() {
@@ -46,12 +57,12 @@ public class Display {
         this.sortType = sortType;
     }
 
-    public boolean isTimed() {
-        return timed;
+    public String isTimed() {
+        return timeUnit;
     }
 
-    public void setTimed(boolean timed) {
-        this.timed = timed;
+    public void setTimed(String timeUnit) {
+        this.timeUnit = timeUnit;
     }
 
 }
