@@ -1,4 +1,8 @@
-package com.sparta.sortmanager;
+package com.sparta.sortmanager.arraylogic;
+
+import com.sparta.sortmanager.arraylogic.BubbleSort;
+import com.sparta.sortmanager.arraylogic.MergeSort;
+import com.sparta.sortmanager.arraylogic.Sorters;
 
 public class SortFactory {
     public static Sorters getSortType(String arg) {

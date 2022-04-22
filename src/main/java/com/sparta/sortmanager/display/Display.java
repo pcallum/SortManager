@@ -1,5 +1,6 @@
-package com.sparta.sortmanager;
+package com.sparta.sortmanager.display;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Display {
@@ -27,14 +28,25 @@ public class Display {
         System.out.println("Enter the lower bound of values in the array as an integer: ");
         this.lowerBound = scan.nextInt();
 
-        System.out.println("Enter the lower bound of values in the array as an integer: ");
+        System.out.println("Enter the upper bound of values in the array as an integer: ");
         this.upperBound = scan.nextInt();
+    }
+
+    public void printArray(int[] arr) {
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public void setSortType() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter the sorting algorithm to use (merge or sort): ");
+        this.sortType = scan.next();
     }
 
     public void setTimeUnit() {
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter the unit of time (ns, ms, s) or nothing to not time it: ");
+        System.out.println("Enter the unit of time (nanoseconds, milliseconds, seconds) or nothing to not time it: ");
         this.timeUnit = scan.next();
     }
 
