@@ -1,15 +1,17 @@
 package com.sparta.sortmanager.arraylogic;
 
-import com.sparta.sortmanager.arraylogic.BubbleSort;
-import com.sparta.sortmanager.arraylogic.MergeSort;
-import com.sparta.sortmanager.arraylogic.Sorters;
+import static com.sparta.sortmanager.control.LogDriver.logger;
 
 public class SortFactory {
     public static Sorters getSortType(String arg) {
-         switch (arg){
-             case "bubble": return new BubbleSort();
-             case "merge": return new MergeSort();
-             default: throw new IllegalArgumentException(arg + " is not 'bubble' or 'merge'");
-         }
+        return switch (arg) {
+            case "bubble" -> new BubbleSort();
+            case "merge" -> new MergeSort();
+            case "binary" -> new BinarySort();
+            default -> {
+                logger.fatal("Illegal sort type in sort factory.");
+                throw new IllegalArgumentException(arg + " is not 'bubble', 'merge', or 'binary'");
+            }
+        };
     }
 }
